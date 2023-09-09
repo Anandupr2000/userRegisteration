@@ -1,0 +1,63 @@
+<h2>User Registration</h2>
+{{!-- <form action="process_registration.php" method="POST"> --}}
+    <form action="/submit" method="POST">
+        <!-- User Information -->
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <!-- Home Addresses (Multiple) -->
+        <h3>Home Addresses</h3>
+
+        <div class="address">
+            <label for="street1">Street Address:</label>
+            <input type="text" id="street1" name="street[]" required><br><br>
+
+            <label for="city1">City:</label>
+            <input type="text" id="city1" name="city[]" required><br><br>
+
+            <label for="state1">State:</label>
+            <input type="text" id="state1" name="state[]" required><br><br>
+
+            <label for="zip1">Zip Code:</label>
+            <input type="text" id="zip1" name="zip[]" required><br><br>
+        </div>
+
+        <button type="button" onclick="addAddress()">Add Address</button><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        let addressCount = 1;
+
+        function addAddress() {
+            addressCount++;
+
+            const addressDiv = document.createElement('div');
+            addressDiv.className = 'address';
+
+            addressDiv.innerHTML = `
+                <h3>Home Address ${addressCount}</h3>
+                <label for="street${addressCount}">Street Address:</label>
+                <input type="text" id="street${addressCount}" name="street[]"><br><br>
+
+                <label for="city${addressCount}">City:</label>
+                <input type="text" id="city${addressCount}" name="city[]"><br><br>
+
+                <label for="state${addressCount}">State:</label>
+                <input type="text" id="state${addressCount}" name="state[]"><br><br>
+
+                <label for="zip${addressCount}">Zip Code:</label>
+                <input type="text" id="zip${addressCount}" name="zip[]"><br><br>
+            `;
+
+            document.querySelector('form').appendChild(addressDiv);
+        }
+    </script>

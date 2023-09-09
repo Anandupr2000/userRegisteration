@@ -1,0 +1,56 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(12, 12, 12);
+  display: flex;
+  justify-content: center;
+  background:linear-gradient(-55deg,
+  rgb(0, 174, 255) 40%, rgb(14, 130, 138) 20%,
+  rgb(46, 69, 201) 15%, rgb(97, 85, 211) 80%,
+  rgb(13, 0, 128) 50%, rgb(116, 110, 173) 65%
+  );
+}
+.main{
+  /* flex-direction: column; */
+  justify-content: space-evenly;
+  border:2px solid #00B7FF;
+  border-radius: 10px;
+  align-items: center;
+  background-color: white;
+  /* opacity: 0.8; */
+  width:fit-content;
+  margin-top: 10%;
+  display: flex;
+}
+a {
+  color: #00B7FF;
+}
+form {
+  border-left: 2px solid #a9e4fc ;
+  flex-direction: column;
+  justify-self: center;
+  padding: 3rem 3rem;
+  align-self: center;
+  row-gap: 1rem;
+  display: flex;
+  /* margin-left: auto; */
+  margin:1rem;
+}
+.main h1{
+  font-variant: small-caps;
+  letter-spacing: 2.5px;
+  padding: 0 2rem;
+  color: rgb(235, 168, 81);
+}
+.main h1 span{
+  color: #00B7FF;
+}
+.form-control{
+  min-width: 18rem;
+}
+.form-control:focus ~ label{
+  background: white;
+}
+form button{
+  max-width: fit-content;
+  height: fit-content;
+}
