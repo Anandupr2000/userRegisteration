@@ -1,8 +1,29 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(12, 12, 12);
 }
 
 a {
   color: #00B7FF;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.form-control{
+  /* border: 5px solid #00B7FF; */
+  /* outline: 1px solid #00B7FF; */
+}
+
+.form-control{
+  max-width: 20rem;
+}
+.form-control:focus ~ label{
+  background: white;
+}
+form button{
+  max-width: fit-content;
+  height: fit-content;
 }
