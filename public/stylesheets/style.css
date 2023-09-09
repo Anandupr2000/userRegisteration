@@ -1,9 +1,18 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: rgb(12, 12, 12);
+  display: flex;
+  justify-content: center;
 }
-
+.main{
+  /* flex-direction: column; */
+  justify-content: space-evenly;
+  border:2px solid #00B7FF;
+  align-items: center;
+  width:fit-content;
+  margin-top: 10%;
+  display: flex;
+}
 a {
   color: #00B7FF;
 }
@@ -11,12 +20,21 @@ form {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+  align-self: center;
+  justify-self: center;
+  /* margin-left: auto; */
+  padding: 6rem 3rem;
+  border-left: 1px dotted gray ;
 }
 .form-control{
   /* border: 5px solid #00B7FF; */
   /* outline: 1px solid #00B7FF; */
 }
-
+.main h1{
+  font-variant: small-caps;
+  letter-spacing: 2.5px;
+  padding: 0 2rem;
+}
 .form-control{
   max-width: 20rem;
 }
