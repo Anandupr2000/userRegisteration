@@ -67,10 +67,10 @@ form button{
     background: white;
 }
 
-#addressDiv{
+.addressDiv{
     display: flex;
 }
-#addressDiv > div{
+.addressDiv > div{
     display: flex;
     flex-direction: row;
 }

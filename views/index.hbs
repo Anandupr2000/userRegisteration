@@ -35,8 +35,11 @@
                     </div>
                 </div>
             </div>
-            <div id="addressDiv">
-                <label class="form-label" for="address">Address</label>
+            <div class="addressDiv">
+                <div>
+                    <h6>Address 1</h6>
+                    <i onclick="addAddress(event)" class="fas fa-circle-plus"></i>
+                </div>
                 <div>
                     <div class="form-outline">
                         <input type="text" id="block" class="form-control border border-info" />
@@ -82,5 +85,57 @@
             console.log(`#${ids[i]}`)
             document.querySelector(`#${ids[i]} ~ label`).style.background = (e.target.value) ? "white" : "transparent"
         })
+    }
+
+    let addressCount = 1
+    const addAddress = (e) => {
+        if (addressCount < 3) {
+            console.log(addressCount)
+            let div = document.querySelector('form>div')
+            const addressDiv = document.createElement('div');
+            addressDiv.className = 'addressDiv';
+            addressDiv.innerHTML = `
+                    <h6>Address ${++addressCount}</h6>
+                <div>
+                    <div class="form-outline">
+                        <input type="text" id="block" class="form-control border border-info" />
+                        <label class="form-label ps-2 pe-2 " for="block">Block</label>
+                    </div>
+                    <div class="form-outline">
+                        <input type="text" id="street" class="form-control border border-info" />
+                        <label class="form-label ps-2 pe-2 " for="street">Street</label>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-outline">
+                        <input type="text" id="block" class="form-control border border-info" />
+                        <label class="form-label ps-2 pe-2 " for="block">Block</label>
+                    </div>
+                    <div class="form-outline">
+                        <input type="text" id="street" class="form-control border border-info" />
+                        <label class="form-label ps-2 pe-2 " for="street">Street</label>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-outline">
+                        <input type="text" id="city" class="form-control border border-info" />
+                        <label class="form-label ps-2 pe-2 " for="city">City</label>
+                    </div>
+                    <div class="form-outline">
+                        <input type="text" id="state" class="form-control border border-info" />
+                        <label class="form-label ps-2 pe-2 " for="state">State</label>
+                    </div>
+                    <div class="form-outline">
+                        <input type="text" id="country" class="form-control border border-info" />
+                        <label class="form-label ps-2 pe-2" for="country">Country</label>
+                    </div>
+                </div>
+                `
+            div.appendChild(addressDiv)
+        }
+        if (addressCount == 3) {
+            console.log(e.target)
+            e.target.style.display = "none"
+        }
     }
 </script>
