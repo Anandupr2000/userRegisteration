@@ -2,66 +2,67 @@
 <p>Welcome to {{title}}</p> --}}
 <div class="main">
     <h1 class="statement"><span>Register</span> Yourself</h1>
-    <form action="" id="userDetails">
+    <form action="/submit" id="userDetails" method="post">
         {{!-- <input type="text" name="uname" id="" placeholder="username">
         <input type="text" name="address" id="" placeholder="address"> --}}
         {{!-- <h2>User Registeration</h2> --}}
         <div>
             <div>
                 <div class="name">
-                    <div class="form-outline">
-                        <input type="text" id="fname" class="form-control border border-info" />
+                    <div class="formElement">
+                        <input type="text" id="fname" name="fname" class="form-control border border-info" />
                         <label class="form-label ps-2 pe-2 " for="fname">First name</label>
                     </div>
-                    <div class="form-outline">
-                        <input type="text" id="lname" class="form-control border border-info" />
+                    <div class="formElement">
+                        <input type="text" id="lname" name="lname" class="form-control border border-info" />
                         <label class="form-label ps-2 pe-2 " for="lname">Last name</label>
                     </div>
                 </div>
                 <div>
-                    <div class="form-outline">
-                        <input type="email" id="email" class="form-control border border-info" />
+                    <div class="formElement">
+                        <input type="email" id="email" name="email" class="form-control border border-info" />
                         <label class="form-label ps-2 pe-2 " for="email">Email</label>
                     </div>
-                    <div class="form-outline">
-                        <input type="number" id="phnno" class="form-control border border-info" />
-                        <label class="form-label ps-2 pe-2 " for="email">Phone number</label>
-                    </div>
-                </div>
-                <div>
-                    <div class="form-outline">
-                        <input type="number" id="age" class="form-control border border-info" />
+                    <div class="formElement">
+                        <input type="number" id="age" name="age" class="form-control border border-info" />
                         <label class="form-label ps-2 pe-2 " for="age">Age</label>
                     </div>
                 </div>
+                <div>
+                    <div class="formElement">
+                        <input type="number" id="phnno" name="phnno" class="form-control border border-info" />
+                        <label class="form-label ps-2 pe-2 " for="phnno">Phone number</label>
+                    </div>
+                </div>
             </div>
+            <input type="number" name="addressCount" id="addressCountInput" hidden>
             <div class="addressDiv">
                 <div>
                     <h6>Address 1</h6>
                     <i onclick="addAddress(event)" class="fas fa-circle-plus"></i>
                 </div>
                 <div>
-                    <div class="form-outline">
-                        <input type="text" id="block" class="form-control border border-info" />
-                        <label class="form-label ps-2 pe-2 " for="block">Block</label>
+                    <div class="formElement">
+                        <input type="text" id="block1" name='block1' class="form-control border border-info" />
+                        <label class="form-label ps-2 pe-2 " for="block1">Block</label>
                     </div>
-                    <div class="form-outline">
-                        <input type="text" id="street" class="form-control border border-info" />
-                        <label class="form-label ps-2 pe-2 " for="street">Street</label>
+                    <div class="formElement">
+                        <input type="text" id="street1" name="street1" class="form-control border border-info" />
+                        <label class="form-label ps-2 pe-2 " for="street1">Street</label>
                     </div>
                 </div>
                 <div>
-                    <div class="form-outline">
-                        <input type="text" id="city" class="form-control border border-info" />
-                        <label class="form-label ps-2 pe-2 " for="city">City</label>
+                    <div class="formElement">
+                        <input type="text" id="city1" name="city1" class="form-control border border-info" />
+                        <label class="form-label ps-2 pe-2 " for="city1">City</label>
                     </div>
-                    <div class="form-outline">
-                        <input type="text" id="state" class="form-control border border-info" />
-                        <label class="form-label ps-2 pe-2 " for="state">State</label>
+                    <div class="formElement">
+                        <input type="text" id="state1" name="state1" class="form-control border border-info" />
+                        <label class="form-label ps-2 pe-2 " for="state1">State</label>
                     </div>
-                    <div class="form-outline">
-                        <input type="text" id="country" class="form-control border border-info" />
-                        <label class="form-label ps-2 pe-2" for="country">Country</label>
+                    <div class="formElement">
+                        <input type="text" id="country1" name="country1" class="form-control border border-info" />
+                        <label class="form-label ps-2 pe-2" for="country1">Country</label>
                     </div>
                 </div>
             </div>
@@ -70,72 +71,3 @@
         <button class="btn btn-primary" type="submit">Submit</button>
     </form>
 </div>
-
-<script>
-    let ids = ['fname', 'lname', 'email', 'phnno', 'age', 'street', 'block', 'city', 'state', 'country']
-    for (let i in ids) {
-        console.log(ids[i])
-        document.getElementById(ids[i]).addEventListener('focusin', (e) => {
-            console.log("focus in")
-            //console.log(`#${ids[i]}`)
-            document.querySelector(`#${ids[i]} ~ label`).style.background = (e.target.value) ? "transparent" : "white"
-        })
-        document.getElementById(ids[i]).addEventListener('focusout', (e) => {
-            console.log("focus out")
-            console.log(`#${ids[i]}`)
-            document.querySelector(`#${ids[i]} ~ label`).style.background = (e.target.value) ? "white" : "transparent"
-        })
-    }
-
-    let addressCount = 1
-    const addAddress = (e) => {
-        if (addressCount < 3) {
-            console.log(addressCount)
-            let div = document.querySelector('form>div')
-            const addressDiv = document.createElement('div');
-            addressDiv.className = 'addressDiv';
-            addressDiv.innerHTML = `
-                    <h6>Address ${++addressCount}</h6>
-                <div>
-                    <div class="form-outline">
-                        <input type="text" id="block" class="form-control border border-info" />
-                        <label class="form-label ps-2 pe-2 " for="block">Block</label>
-                    </div>
-                    <div class="form-outline">
-                        <input type="text" id="street" class="form-control border border-info" />
-                        <label class="form-label ps-2 pe-2 " for="street">Street</label>
-                    </div>
-                </div>
-                <div>
-                    <div class="form-outline">
-                        <input type="text" id="block" class="form-control border border-info" />
-                        <label class="form-label ps-2 pe-2 " for="block">Block</label>
-                    </div>
-                    <div class="form-outline">
-                        <input type="text" id="street" class="form-control border border-info" />
-                        <label class="form-label ps-2 pe-2 " for="street">Street</label>
-                    </div>
-                </div>
-                <div>
-                    <div class="form-outline">
-                        <input type="text" id="city" class="form-control border border-info" />
-                        <label class="form-label ps-2 pe-2 " for="city">City</label>
-                    </div>
-                    <div class="form-outline">
-                        <input type="text" id="state" class="form-control border border-info" />
-                        <label class="form-label ps-2 pe-2 " for="state">State</label>
-                    </div>
-                    <div class="form-outline">
-                        <input type="text" id="country" class="form-control border border-info" />
-                        <label class="form-label ps-2 pe-2" for="country">Country</label>
-                    </div>
-                </div>
-                `
-            div.appendChild(addressDiv)
-        }
-        if (addressCount == 3) {
-            console.log(e.target)
-            e.target.style.display = "none"
-        }
-    }
-</script>
