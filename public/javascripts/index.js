@@ -48,25 +48,25 @@ function addAddress(e) {
                 <h6>Address ${++addressCount}</h6>
             <div>
                 <div class="formElement">
-                    <input type="text" id="block${addressCount}" name="block${addressCount}" class="form-control border border-info" />
+                    <input type="text" id="block${addressCount}" name="block${addressCount}" class="form-control border border-info" required/>
                     <label class="form-label ps-2 pe-2 " for="block${addressCount}">Block</label>
                 </div>
                 <div class="formElement">
-                    <input type="text" id="street${addressCount}" name="street${addressCount}" class="form-control border border-info" />
+                    <input type="text" id="street${addressCount}" name="street${addressCount}" class="form-control border border-info" required/>
                     <label class="form-label ps-2 pe-2 " for="street${addressCount}">Street</label>
                 </div>
             </div>
             <div>
                 <div class="formElement">
-                    <input type="text" id="city${addressCount}" name="city${addressCount}" class="form-control border border-info" />
+                    <input type="text" id="city${addressCount}" name="city${addressCount}" class="form-control border border-info" required/>
                     <label class="form-label ps-2 pe-2 " for="city${addressCount}">City</label>
                 </div>
                 <div class="formElement">
-                    <input type="text" id="state${addressCount}" name="state${addressCount}" class="form-control border border-info" />
+                    <input type="text" id="state${addressCount}" name="state${addressCount}" class="form-control border border-info" required/>
                     <label class="form-label ps-2 pe-2 " for="state${addressCount}">State</label>
                 </div>
                 <div class="formElement">
-                    <input type="text" id="country${addressCount}" name="country${addressCount}" class="form-control border border-info" />
+                    <input type="text" id="country${addressCount}" name="country${addressCount}" class="form-control border border-info" required/>
                     <label class="form-label ps-2 pe-2" for="country${addressCount}">Country</label>
                 </div>
             </div>
