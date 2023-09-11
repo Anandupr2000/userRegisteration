@@ -1,5 +1,11 @@
 {{!-- <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p> --}}
+{{#if showAlert}}
+<script>
+    alert('{{ msg }}')
+</script>
+{{/if }}
+
 <div class="main">
     <h1 class="statement"><span>Register</span> Yourself</h1>
     <form action="/submit" id="userDetails" method="post">
@@ -35,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <input type="number" name="addressCount" id="addressCountInput" hidden>
+            <input type="number" name="addressCount" id="addressCountInput" value="1" hidden>
             <div class="addressDiv">
                 <div>
                     <h6>Address 1</h6>
